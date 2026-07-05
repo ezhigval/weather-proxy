@@ -32,6 +32,12 @@ func (h *WeatherHandler) GetWeather(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if weather.Cached {
+		w.Header().Set("X-Cache", "HIT")
+	} else {
+		w.Header().Set("X-Cache", "MISS")
+	}
+
 	httputil.WriteJSON(w, http.StatusOK, weather)
 }
 
