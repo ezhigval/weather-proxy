@@ -1,0 +1,25 @@
+services:
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6380:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  app:
+    build: .
+    ports:
+      - "8081:8081"
+    environment:
+      PORT: "8081"
+      REDIS_ADDR: redis:6379
+      LOG_LEVEL: info
+      LOG_FORMAT: json
+      CACHE_TTL: 10m
+      BATCH_WORKERS: 4
+    depends_on:
+      redis:
+        condition: service_healthy
