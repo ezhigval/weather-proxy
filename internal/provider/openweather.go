@@ -87,7 +87,6 @@ func (p *OpenWeather) Fetch(ctx context.Context, city string) (*model.Weather, e
 	}, nil
 }
 
-// Mock provides deterministic weather for local dev without API key.
 type Mock struct{}
 
 func NewMock() *Mock { return &Mock{} }

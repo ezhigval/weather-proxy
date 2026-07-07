@@ -1,5 +1,7 @@
 # ADR-001: Mock provider when API key missing
 
+**English** · [Русский](001-mock-provider.ru.md)
+
 **Status:** Accepted  
 **Date:** 2026-07-06
 

@@ -5,6 +5,8 @@
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Tier](https://img.shields.io/badge/tier-junior-1d76db)
 
+**English** · [Русский](README.ru.md)
+
 Caches weather API responses. Batch endpoint uses a worker pool.
 
 ## Run
